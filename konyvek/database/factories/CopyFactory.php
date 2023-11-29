@@ -21,9 +21,14 @@ class CopyFactory extends Factory
         return [
        // 'book_id' => Book::random()->book_id,
            //'user_id' => User::random()->id
-            'book_id' => rand(1,13),
-           'user_id' => rand(1,13),
-           
+           // 'book_id' => rand(1,13),
+          // 'user_id' => rand(1,13),
+          'hardcovered'=>rand(0,1 ),
+          'book_id' =>Book::all()-> random()->book_id,
+          'publication'=>fake()->year,
+          'status'=>rand(0,2)
+
+
         ];
     }
 }
