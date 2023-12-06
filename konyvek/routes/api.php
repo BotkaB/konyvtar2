@@ -38,3 +38,7 @@ Route::post('/lendings', [LendingController::class, 'store']);
 
 
 Route::delete('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']); 
+
+//egyéb végpontok
+
+Route:: patch('/user_updatepassword/{user_id}', [UserController::class, 'updatePassword']);
