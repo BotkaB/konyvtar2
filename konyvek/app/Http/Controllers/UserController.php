@@ -58,7 +58,7 @@ class UserController extends Controller
         $user = User::where("id", $id)->update([
             "password" => Hash::make($request->password),
         ]);
-        return response()->json(["user" => $user]);
+       // return response()->json(["user" => $user]);
     }
 
 
