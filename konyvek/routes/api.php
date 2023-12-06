@@ -29,8 +29,12 @@ Route::apiResource('/users',UserController::class);
 Route::apiResource('/copies',CopyController::class);
 Route::apiResource('/books',BookController::class);
 
-Route::get('/index', [Lendings::class, 'index']);
-Route::post('/index', [Lendings::class, 'store']);
-Route::get('/index/{user_id}/{copy_id}/{start}', [Lendings::class, 'show']);
-Route::put('/index/{user_id}/{copy_id}/{start}', [Lendings::class, 'update']);
-Route::delete('/index/{user_id}/{copy_id}/{start}', [Lendings::class, 'destroy']); 
+Route::get('/lendings', [LendingController::class, 'index']);
+Route::get('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'show']);
+
+/* Route::put('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']); */
+
+Route::post('/lendings', [LendingController::class, 'store']);
+
+
+Route::delete('/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']); 
