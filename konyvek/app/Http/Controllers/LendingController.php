@@ -52,8 +52,11 @@ class LendingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Lending $lending)
+    public function destroy($user_id, $copy_id, $start)
     {
-        $lending->delete();
+        Lending::where('user_id',$user_id)
+        ->where ('copy_id', $copy_id)
+        ->where ('start', $start)
+         ->delete();
     }
 }
